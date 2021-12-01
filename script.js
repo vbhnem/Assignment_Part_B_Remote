@@ -11,16 +11,17 @@ let contactList = [
       address: "Warner Brothers Animation Lot",
       email: "whatsup@doc.example.com",
     }
-  ];
+  ]
 
 function cleanUpIndex() {
-    const parent = document.querySelector(".main");
-    const child = document.querySelectorAll(".contact");
-    while (child) {
-       parent.removeChild(child);
-   };
+    const parent = document.querySelector(".main")
+    const child = document.querySelectorAll(".contact")
 
-};
+    while (child) {
+       parent.removeChild(child)
+   }
+
+}
 
 function createSingleIndex(contactList) {
     const a = document.createElement("a")
@@ -37,19 +38,33 @@ function createSingleIndex(contactList) {
 
 
 function renderIndex(contactList) {
+    const main = document.querySelector(".main")
+
     for (var i = 0; i < contactList.length; i += 1) {
         var singlecontact = contactList[i];
-        createSingleIndex(singlecontact).append(main);
-    };
+        main.append(createSingleIndex(singlecontact))
+    }
 
-};
+}
 
 function cleanUpView() {
-    const parent = document.querySelector(".main");
-    const child = document.querySelector(".contactinfo");
+    const parent = document.querySelector(".contactinfo")
+    const name = document.querySelector(".contactname")
+    const email = document.querySelector(".contactemail")
+    const phone = document.querySelector(".contactphone")
+    const address = document.querySelector(".contactaddress")
 
-    while (child) {
-        parent.remove(child);
+    if (name) {
+        parent.remove(name)
+    }
+    if (email) {
+        parent.remove(email)
+    }
+    if (phone) {
+        parent.remove(phone)
+    }
+    if (address) {
+        parent.remove(address)
     }
 
 };
