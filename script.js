@@ -262,12 +262,10 @@ function renderCreate() {
         renderIndex(contactList)
         e.preventDefault()
     })
-
-    window.addEventListener("load", (e) => {
-        cleanUpIndex()
-        renderIndex(contactList)
-        e.preventDefault()
-    })
-
 }
 
+window.addEventListener("load", (e) => {
+    cleanUpIndex()
+    renderIndex(contactList)
+    e.preventDefault()
+})
